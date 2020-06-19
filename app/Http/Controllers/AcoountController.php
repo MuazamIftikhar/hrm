@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\AdminInfo;
 use App\Employee;
+use App\Role;
+use App\Shift;
 use App\User;
 use foo\bar;
 use Illuminate\Http\Request;
@@ -83,7 +85,9 @@ class AcoountController extends Controller
      */
     public function employee()
     {
-        return view('Employee.create');
+        $shift=Shift::all();
+        $role=Role::whereIn('id',[3,4])->get();
+        return view('Employee.create',['shift'=>$shift,'role'=>$role]);
     }
 
     /**
@@ -115,8 +119,28 @@ class AcoountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function manage_employee()
     {
-        //
+        $employee=Employee::all();
+        return view('Employee.manage',['employee'=>$employee]);
+    }
+    public function update_employee(Request $request)
+    {
+        $employee=Employee::where('id','=',$request->id)->get();
+        $shift=Shift::all();
+        return view('Employee.update',['employee'=>$employee,'shift'=>$shift]);
+    }
+    public function edit_employee(Request $request)
+    {
+        DB::table('employees')
+            ->where('id', $request->id)
+            ->update(['name' => $request->name,'lastName' => $request->lastName,'email' =>$request->email ,'phone' =>$request->phone ,'shift' =>$request->shift ,'DOB' =>$request->DOB ,'DOJ' => $request->DOJ,'Gender' =>$request->Gender ,'Address' =>$request->Address ]);
+        return redirect()->route('manage_employee');
+    }
+    public function delete_employee(Request $request)
+    {
+        DB::table('employees')
+            ->where('id', $request->id)->delete();
+        return redirect()->route('manage_employee');
     }
 }

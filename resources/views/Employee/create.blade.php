@@ -6,7 +6,7 @@
                     <!--begin::Card-->
                     <div class="card card-custom gutter-b example example-compact">
                         <div class="card-header">
-                            <h3 class="card-title">Base Controls</h3>
+                            <h3 class="card-title">Employee Form</h3>
                         </div>
                         <!--begin::Form-->
                             <form method="POST" action="{{ route('save_employee') }}">
@@ -78,23 +78,11 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                        <label for="exampleSelect2">Role</label>
-                                            <select class="form-control" name="role">
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
                                         <label for="exampleSelect2">Office Shift</label>
                                             <select class="form-control" name="shift">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                               @foreach($shift as $s)
+                                                <option value="{{$s->id}} ">{{$s->shift}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
