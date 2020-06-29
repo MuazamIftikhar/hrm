@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--begin::Head-->
 <head><base href="../../../../">
     <meta charset="utf-8" />
-    <title>Metronic | Sign Up</title>
+    <title>HRM | Sign Up</title>
     <meta name="description" content="Singin page example" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--begin::Fonts-->
@@ -167,6 +167,12 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="form-group">
                                 <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
                                 <input type="email" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6" id="Email" required name="Email" placeholder="Email"  />
+                            </div>
+                            <!--end::Form Group-->
+                            <!--begin::Form Group-->
+                            <div class="form-group">
+                                <label class="font-size-h6 font-weight-bolder text-dark">Company Name</label>
+                                <input type="text" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6" id="companyName"   name="companyName" placeholder="Enter Company Name" />
                             </div>
                             <!--end::Form Group-->
                         </div>

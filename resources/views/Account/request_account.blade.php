@@ -4,8 +4,8 @@
     <div class="card card-custom">
         <div class="card-header flex-wrap py-5">
             <div class="card-title">
-                <h3 class="card-label">Paginations
-                    <span class="d-block text-muted pt-2 font-size-sm">extended pagination options</span></h3>
+                <h3 class="card-label">Account Request
+                    <span class="d-block text-muted pt-2 font-size-sm">Accept the account</span></h3>
             </div>
         </div>
         <div class="card-body">

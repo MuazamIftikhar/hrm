@@ -216,7 +216,14 @@ var KTLogin = function() {
 								message: 'The value is not a valid email address'
 							}
 						}
-					}
+					},
+                    companyName: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Company Name is required'
+                            }
+                        }
+                    }
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
@@ -261,7 +268,7 @@ var KTLogin = function() {
                     cardNumber: {
 						validators: {
 							notEmpty: {
-								message: 'CArd Number type is required'
+								message: 'Card Number type is required'
 							}
 						}
 					},

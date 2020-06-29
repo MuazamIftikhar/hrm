@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Employee;
+use App\Leave;
+use App\LeaveType;
 use App\Shift;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ShiftController extends Controller
@@ -27,7 +31,11 @@ class ShiftController extends Controller
     public function save_shift(Request $request)
     {
         $shift=new Shift();
+        $shift->company_id=Auth::user()->id;
         $shift->shift=$request->shift;
+        $shift->day=json_encode($request->Day);
+        $shift->time_in=$request->time_in;
+        $shift->time_out=$request->time_out;
         $shift->save();
         return back();
     }
@@ -46,7 +54,7 @@ class ShiftController extends Controller
     public function edit_shift(Request $request){
            DB::table('shifts')
                ->where('id', $request->id)
-               ->update(['shift' => $request->shift ]);
+               ->update(['shift' => $request->shift,'day' => json_encode($request->Day),'time_in' => $request->time_in,'time_out' => $request->time_out]);
            return redirect()->route('shift');
        }
     public function delete_shift(Request $request)
@@ -62,10 +70,7 @@ class ShiftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.

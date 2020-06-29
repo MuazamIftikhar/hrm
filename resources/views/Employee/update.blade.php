@@ -1,13 +1,15 @@
+
 @extends('layouts.masterLayout')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <!--begin::Card-->
-            <div class="card card-custom gutter-b example example-compact">
-                <div class="card-header">
-                    <h3 class="card-title">Employee Form</h3>
-                </div>
+    <div class="card card-custom">
+        <div class="card-header flex-wrap py-5">
+            <div class="card-title">
+                <h3 class="card-label">Update Employee
+                    <span class="d-block text-muted pt-2 font-size-sm">Edit and delete the employee</span></h3>
+            </div>
+        </div>
+        <div class="card-body">
                 <!--begin::Form-->
                 @foreach($employee as $a)
                 <form method="POST" action="{{ route('edit_employee',['id'=>$a->id]) }}">
@@ -87,6 +89,16 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleSelect2">Leave</label>
+                                    <select class="form-control" name="leave">
+                                        @foreach($leave as $l)
+                                            <option value="{{$l->id}}" {{$a->leave == $l->id ? "selected" : ""}}>{{$l->leave}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -96,7 +108,6 @@
                 </form>
                 <!--end::Form-->
                     @endforeach
-            </div>
         </div>
     </div>
 @endsection

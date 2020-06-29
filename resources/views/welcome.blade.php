@@ -1,96 +1,135 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<script src="bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!DOCTYPE html>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+<html lang="en">
+<!--begin::Head-->
+<head>
+    <meta charset="utf-8" />
+    <title>HRM</title>
+    <meta name="description" content="Singin page example" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Page Custom Styles(used by this page)-->
+    <link href="{{URL::asset('assets/css/pages/login/login-3.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+    <!--end::Page Custom Styles-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="{{URL::asset('assets/plugins/global/plugins.bundle.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/css/style.bundle.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="{{URL::asset('assets/css/themes/layout/header/base/light.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/css/themes/layout/header/menu/light.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/css/themes/layout/brand/dark.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/css/themes/layout/aside/dark.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <link rel="shortcut icon" href="{{URL::asset('assets/media/logos/favicon.ico')}}" />
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+<!--begin::Main-->
+<div class="d-flex flex-column flex-root">
+    <!--begin::Login-->
+    <div class="login login-3 wizard d-flex flex-column flex-lg-row flex-column-fluid">
+        <!--begin::Aside-->
+        <div class="login-aside d-flex flex-column flex-row-auto">
+            <!--begin::Aside Top-->
+            <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
+                <!--begin::Aside header-->
+                <a href="#" class="login-logo text-center pt-lg-25 pb-10">
+                    <img src="{{URL::asset('assets/media/logos/logo-1.png')}}" class="max-h-70px" alt="" />
+                </a>
+                <!--end::Aside header-->
+                <!--begin::Aside Title-->
+                <h3 class="font-weight-bolder text-center font-size-h4 text-dark-50 line-height-xl">User Experience &amp; Interface Design
+                    <br />Strategy SaaS Solutions</h3>
+                <!--end::Aside Title-->
             </div>
+            <!--end::Aside Top-->
+            <!--begin::Aside Bottom-->
+            <div class="aside-img d-flex flex-row-fluid bgi-no-repeat bgi-position-x-center" style="background-position-y: calc(100% + 5rem); background-image: url(assets/media/svg/illustrations/login-visual-5.svg)"></div>
+            <!--end::Aside Bottom-->
         </div>
-    </body>
+        <!--begin::Aside-->
+        <!--begin::Content-->
+        <div class="login-content flex-row-fluid d-flex flex-column p-10">
+            <!--begin::Top-->
+
+            <!--end::Top-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-row-fluid flex-center">
+                <!--begin::Signin-->
+                <div class="login-form">
+                    <!--begin::Form-->
+                    <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <!--begin::Title-->
+                        <div class="pb-5 pb-lg-15">
+                            <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Sign In</h3>
+                            <div class="text-muted font-weight-bold font-size-h4">New Here?
+                                <a href="{{route('request_account')}}" class="text-primary font-weight-bolder">Create Account</a></div>
+                        </div>
+                        <!--begin::Title-->
+                        <!--begin::Form group-->
+                        <div class="form-group">
+                            <label class="font-size-h6 font-weight-bolder text-dark"> Email</label>
+                            <input id="email" type="email" class="form-control h-auto py-7 px-6 rounded-lg border-0 {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                        <!--end::Form group-->
+                        <!--begin::Form group-->
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between mt-n5">
+                                <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
+                                <a href="#" class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5">Forgot Password ?</a>
+                            </div>
+                            <input id="password" type="password" class="form-control h-auto py-7 px-6 rounded-lg border-0 {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                        <!--end::Form group-->
+                        <!--begin::Action-->
+                        <div class="pb-lg-0 pb-5">
+                            <button type="submit" id="kt_login_singin_form_submit_button" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Sign In</button>
+                        </div>
+                        <!--end::Action-->
+                    </form>
+                    <!--end::Form-->
+                </div>
+                <!--end::Signin-->
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Content-->
+    </div>
+    <!--end::Login-->
+</div>
+<!--end::Main-->
+<script>var HOST_URL = "https://keenthemes.com/metronic/tools/preview";</script>
+<!--begin::Global Config(global config for global JS scripts)-->
+<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
+<!--end::Global Config-->
+<!--begin::Global Theme Bundle(used by all pages)-->
+<script src="{{URL::asset('assets/plugins/global/plugins.bundle.js?v=7.0.3')}}"></script>
+<script src="{{URL::asset('assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.3')}}"></script>
+<script src="{{URL::asset('assets/js/scripts.bundle.js?v=7.0.3')}}"></script>
+<!--end::Global Theme Bundle-->
+<!--begin::Page Scripts(used by this page)-->
+<script src="{{URL::asset('assets/js/pages/custom/login/login-3.js?v=7.0.3')}}"></script>
+<!--end::Page Scripts-->
+</body>
+<!--end::Body-->
 </html>
