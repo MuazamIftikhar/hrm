@@ -427,6 +427,7 @@ class ComposerStaticInitf794eaa15c58ec09c876d3f8980bf6a0
     public static $classMap = array (
         'App\\AdminInfo' => __DIR__ . '/../..' . '/app/AdminInfo.php',
         'App\\ApplyLeave' => __DIR__ . '/../..' . '/app/ApplyLeave.php',
+        'App\\AssignEmployee' => __DIR__ . '/../..' . '/app/AssignEmployee.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Employee' => __DIR__ . '/../..' . '/app/Employee.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -436,6 +437,7 @@ class ComposerStaticInitf794eaa15c58ec09c876d3f8980bf6a0
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CalenderController' => __DIR__ . '/../..' . '/app/Http/Controllers/CalenderController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\LeaveController' => __DIR__ . '/../..' . '/app/Http/Controllers/LeaveController.php',
@@ -457,6 +459,7 @@ class ComposerStaticInitf794eaa15c58ec09c876d3f8980bf6a0
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
+        'App\\Scheduling' => __DIR__ . '/../..' . '/app/Scheduling.php',
         'App\\Shift' => __DIR__ . '/../..' . '/app/Shift.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',

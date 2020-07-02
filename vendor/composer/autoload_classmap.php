@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\AdminInfo' => $baseDir . '/app/AdminInfo.php',
     'App\\ApplyLeave' => $baseDir . '/app/ApplyLeave.php',
+    'App\\AssignEmployee' => $baseDir . '/app/AssignEmployee.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Employee' => $baseDir . '/app/Employee.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -17,6 +18,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
+    'App\\Http\\Controllers\\CalenderController' => $baseDir . '/app/Http/Controllers/CalenderController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\LeaveController' => $baseDir . '/app/Http/Controllers/LeaveController.php',
@@ -38,6 +40,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Role' => $baseDir . '/app/Role.php',
+    'App\\Scheduling' => $baseDir . '/app/Scheduling.php',
     'App\\Shift' => $baseDir . '/app/Shift.php',
     'App\\User' => $baseDir . '/app/User.php',
     'BeyondCode\\DumpServer\\DumpServerCommand' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',

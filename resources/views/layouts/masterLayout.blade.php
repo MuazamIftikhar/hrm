@@ -15,6 +15,8 @@
     <!--end::Page Vendors Styles-->
     <!--begin::Page Vendors Styles(used by this page)-->
     <link href="{{URL::asset('assets/plugins/custom/datatables/datatables.bundle.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
+
     <!--end::Page Vendors Styles-->
     <!--begin::Global Theme Styles(used by all pages)-->
     <link href="{{URL::asset('assets/plugins/global/plugins.bundle.css?v=7.0.3')}}" rel="stylesheet" type="text/css" />
@@ -2652,6 +2654,12 @@
 <script src="{{URL::asset('assets/js/pages/crud/datatables/basic/paginations.js?v=7.0.3')}}"></script>
 <!--begin::Page Scripts(used by this page)-->
 <script src="{{URL::asset('assets/js/pages/crud/forms/widgets/select2.js?v=7.0.3')}}"></script>
+<!--end::Page Scripts-->
+<!--begin::Page Vendors(used by this page)-->
+<script src="{{URL::asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.3')}}"></script>
+<!--end::Page Vendors-->
+<!--begin::Page Scripts(used by this page)-->
+<script src="{{URL::asset('assets/js/pages/features/calendar/basic.js?v=7.0.3')}}"></script>
 <!--end::Page Scripts-->
 </body>
 <!--end::Body-->
