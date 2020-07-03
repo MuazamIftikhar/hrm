@@ -31,9 +31,7 @@ Route::group([ 'middleware' => ['auth']], function() {
     Route::POST('/save_apply_leave', 'LeaveController@save_apply_leave')->name('save_apply_leave');
     Route::GET('/update_leave_status', 'LeaveController@update_leave_status')->name('update_leave_status');
 
-    Route::GET('/calender', 'CalenderController@index')->name('calender');
-    Route::GET('/employee_scheduling', 'CalenderController@employee_scheduling')->name('employee_scheduling');
-    Route::POST('/save_employee_scheduling', 'CalenderController@save_employee_scheduling')->name('save_employee_scheduling');
+
 
 Route::group(['prefix' => "SuperAdmin", 'middleware' => ['role:SuperAdmin']], function() {
 
@@ -47,6 +45,9 @@ Route::group(['prefix' => "SuperAdmin", 'middleware' => ['role:SuperAdmin']], fu
 
 Route::group(['prefix' => \App\Http\Controllers\AccountController::userName(), 'middleware' => ['role:UserAdmin']], function() {
 
+    Route::GET('/calender', 'CalenderController@index')->name('calender');
+    Route::GET('/employee_scheduling', 'CalenderController@employee_scheduling')->name('employee_scheduling');
+    Route::POST('/save_employee_scheduling', 'CalenderController@save_employee_scheduling')->name('save_employee_scheduling');
 
 //user admin will add the employee
     Route::GET('/employee', 'AccountController@employee')->name('employee');
