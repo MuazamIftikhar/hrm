@@ -14,6 +14,22 @@
             @csrf
             <!--begin: Datatable-->
             <div class="card-body">
+                @if (session('error'))
+                    <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <strong>{{ session('error') }}</strong>
+                    </div>
+                @endif
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <strong>{{ session('success') }}</strong>
+                    </div>
+                @endif
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">

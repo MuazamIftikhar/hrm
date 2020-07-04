@@ -6,6 +6,7 @@ use App\ApplyLeave;
 use App\Employee;
 use App\Leave;
 use App\LeaveType;
+use Carbon\Carbon;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -88,13 +89,13 @@ class LeaveController extends Controller
                 $applyLeave->days=$request->days;
                 $applyLeave->from=$request->date_from;
                 $applyLeave->to=$request->date_to;
-                $applyLeave->month=date('m-Y');
-                $applyLeave->year=date('Y');
+                $applyLeave->month=Carbon::parse($request->date_from)->format('m-Y');
+                $applyLeave->year=Carbon::parse($request->date_from)->format('Y');
                 $applyLeave->description=$request->description;
                 $applyLeave->save();
-                return back();
+                return redirect()->back()->with("success" , "Leave Apply Successfully!");
             }else{
-                return back();
+                return redirect()->back()->with("error" , "You already use your Leave!");
             }
         }else{
             $apply_leave=ApplyLeave::select(DB::raw('*'))->where('user_id',Auth::user()->id)->where('status','1')->where('year',date('Y'))->sum('days');
@@ -105,13 +106,13 @@ class LeaveController extends Controller
                 $applyLeave->days=$request->days;
                 $applyLeave->from=$request->date_from;
                 $applyLeave->to=$request->date_to;
-                $applyLeave->month=date('m-Y');
-                $applyLeave->year=date('Y');
+                $applyLeave->month=Carbon::parse($request->date_from)->format('m-Y');
+                $applyLeave->year=Carbon::parse($request->date_from)->format('Y');
                 $applyLeave->description=$request->description;
                 $applyLeave->save();
-                return back();
+                return redirect()->back()->with("success" , "Leave Apply Successfully!");
             }else{
-                return back();
+                return redirect()->back()->with("error" , "You already use your Leave!");
             }
         }
 

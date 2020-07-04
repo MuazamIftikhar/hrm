@@ -7,12 +7,28 @@
             <!--begin::Card-->
             <div class="card card-custom ">
                 <div class="card-header">
-                    <h3 class="card-title">Add Leave Type</h3>
+                    <h3 class="card-title">Apply Leave</h3>
                 </div>
                 <!--begin::Form-->
                 <form method="POST" action="{{route('save_apply_leave')}}">
                     @csrf
                     <div class="card-body">
+                        @if (session('error'))
+                            <div class="alert alert-danger" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <strong>{{ session('error') }}</strong>
+                            </div>
+                        @endif
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <strong>{{ session('success') }}</strong>
+                            </div>
+                        @endif
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -35,13 +51,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Date From</label>
-                                    <input type="date" class="form-control" required name="date_from" />
+                                    <input type="date" class="form-control" value="<?php echo date("Y-m-d"); ?>" min="<?php echo date("Y-m-d"); ?>" required name="date_from" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Date To</label>
-                                    <input type="date" class="form-control" required  name="date_to" />
+                                    <input type="date" class="form-control" value="<?php echo date("Y-m-d"); ?>" min="<?php echo date("Y-m-d"); ?>" required  name="date_to" />
                                 </div>
                             </div>
                         </div>

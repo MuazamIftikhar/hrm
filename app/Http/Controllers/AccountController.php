@@ -126,9 +126,11 @@ class AccountController extends Controller
         $employee->DOJ=$request->DOJ;
         $employee->Gender=$request->Gender;
         $employee->Address=$request->Address;
-        $employee->save();
-
-        return back();
+        if($employee->save()){
+            return redirect()->back()->with("success" , "Employee Created Successfully!");
+        }else{
+            return redirect()->back()->with("error" , "Employee Error");
+        }
     }
 
     /**

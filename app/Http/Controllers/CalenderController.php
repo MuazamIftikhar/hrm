@@ -57,22 +57,27 @@ class CalenderController extends Controller
         $employee=Employee::whereNotIn('user_id', $applly_leave)
             ->where('company_id',Auth::user()->id)->where('shift',$request->shift)->take($request->employee_number)->pluck('name');
         $day=Carbon::parse($request->date)->format('l');
-        $scheduling=new Scheduling();
-        $scheduling->day=$day;
-        $scheduling->date=$request->date;
-        $scheduling->number=$request->employee_number;
-        $scheduling->description=$request->description;
-        $scheduling->save();
+        $assign_employee=AssignEmployee::where('company_id',Auth::user()->id)->where('shift',$shift[0])->get();
+        if (count($assign_employee) > 0){
+            return redirect()->back()->with("error" , "You already assign the employee on that day your Leave!");
+        }else {
+            $scheduling = new Scheduling();
+            $scheduling->day = $day;
+            $scheduling->date = $request->date;
+            $scheduling->number = $request->employee_number;
+            $scheduling->description = $request->description;
+            $scheduling->save();
 
 
-        $date=date('Y-m-d', strtotime($request->date));
-        $assign_employee=new AssignEmployee();
-        $assign_employee->company_id=Auth::user()->id;
-        $assign_employee->shift=$shift[0];
-        $assign_employee->date=$date;
-        $assign_employee->user_id=json_encode($employee);
-        $assign_employee->save();
-        return back();
+            $date = date('Y-m-d', strtotime($request->date));
+            $assign_employee = new AssignEmployee();
+            $assign_employee->company_id = Auth::user()->id;
+            $assign_employee->shift = $shift[0];
+            $assign_employee->date = $date;
+            $assign_employee->user_id = json_encode($employee);
+            $assign_employee->save();
+            return redirect()->back()->with("success" , "Assign Employee Successfully!");
+        }
     }
 
     /**
