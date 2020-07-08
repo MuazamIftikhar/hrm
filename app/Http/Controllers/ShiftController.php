@@ -19,7 +19,7 @@ class ShiftController extends Controller
      */
     public function index()
     {
-        $shift=Shift::all();
+        $shift=Shift::where('company_id',Auth::user()->id)->get();
         return view('Shift.create',['shift'=>$shift]);
     }
 

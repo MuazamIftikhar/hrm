@@ -21,7 +21,7 @@ class LeaveController extends Controller
      */
     public function index()
     {
-        $leave=Leave::all();
+        $leave=Leave::where('company_id',Auth::user()->id)->get();
         return view('Leave.create',compact('leave'));
     }
 
@@ -129,7 +129,10 @@ class LeaveController extends Controller
     {
         $leave=ApplyLeave::select(DB::raw('*,apply_leaves.id as l_id'))
             ->join('users', 'apply_leaves.user_id', '=', 'users.id')
-            ->where('apply_leaves.status',0)->get();
+            ->join('employees', 'apply_leaves.user_id', '=', 'employees.user_id')
+            ->where('apply_leaves.status',0)
+            ->where('employees.company_id',Auth::user()->id)
+            ->get();
         return view('Leave.request',compact('leave'));
     }
 

@@ -194,9 +194,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <label class="font-size-h6 font-weight-bolder text-dark">Package</label>
                                         <select id="Package" name="Package" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6">
                                             <option value="">Select</option>
-                                            <option value="Baic">Baic</option>
-                                            <option value="Pro">Pro</option>
-                                            <option value="Premium">Premium</option>
+                                            @foreach($package as $p)
+                                            <option value="{{$p->id}}">{{$p->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <!--end::Input-->

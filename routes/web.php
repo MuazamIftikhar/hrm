@@ -22,12 +22,11 @@ Route::group([ 'middleware' => ['auth']], function() {
 
 
 //user admin will add info and package
-    Route::GET('/request_account', 'AccountController@request_account')->name('request_account');
+    Route::GET('/request_account', 'AccountController@request_account')->name('request_account');//
+//Route::GET('/test', 'AccountController@test')->name('test');
     Route::POST('/save_request_account', 'AccountController@save_request_account')->name('save_request_account');
 
-
-
-
+    Route::GET('/payment', 'AccountController@payment')->name('payment');
 
 
 Route::group(['prefix' => "SuperAdmin", 'middleware' => ['role:SuperAdmin']], function() {
@@ -36,7 +35,13 @@ Route::group(['prefix' => "SuperAdmin", 'middleware' => ['role:SuperAdmin']], fu
     Route::GET('/account_request', 'AccountController@account_request')->name('account_request');
     Route::GET('/update_status', 'AccountController@update_status')->name('update_status');
 
+    Route::GET('/package', 'AccountController@package')->name('package');
+    Route::POST('/save_package', 'AccountController@save_package')->name('save_package');
 
+    Route::GET('/manage_package', 'AccountController@manage_package')->name('manage_package');
+    Route::GET('/update_package', 'AccountController@update_package')->name('update_package');
+    Route::POST('/edit_package', 'AccountController@edit_package')->name('edit_package');
+    Route::GET('/delete_package', 'AccountController@delete_package')->name('delete_package');
 
 });
 

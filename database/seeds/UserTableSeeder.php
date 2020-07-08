@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserTableSeeder extends Seeder
@@ -17,6 +18,7 @@ class UserTableSeeder extends Seeder
         $user->lastName="Iftikhar";
         $user->phone="03230471256";
         $user->email="admin@gmail.com";
+        $user->status=1;
         $user->password=Hash::make("1234567");
         $user->save();
         $owner = new \App\Role();
