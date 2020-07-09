@@ -26,7 +26,13 @@ Route::group([ 'middleware' => ['auth']], function() {
 //Route::GET('/test', 'AccountController@test')->name('test');
     Route::POST('/save_request_account', 'AccountController@save_request_account')->name('save_request_account');
 
-    Route::GET('/payment', 'AccountController@payment')->name('payment');
+    Route::GET('/payment/{id}/{hash}', 'AccountController@payment')->name('payment');
+
+    Route::POST('paymentwithpaypal', 'PaymentController@payWithpaypal')->name('paymentwithpaypal');
+
+    Route::get('status','PaymentController@status')->name('status');
+
+
 
 
 Route::group(['prefix' => "SuperAdmin", 'middleware' => ['role:SuperAdmin']], function() {
