@@ -516,6 +516,8 @@ class ComposerStaticInitf794eaa15c58ec09c876d3f8980bf6a0
         'App\\LeaveType' => __DIR__ . '/../..' . '/app/LeaveType.php',
         'App\\Mail\\WelcomeMail' => __DIR__ . '/../..' . '/app/Mail/WelcomeMail.php',
         'App\\Package' => __DIR__ . '/../..' . '/app/Package.php',
+        'App\\PaypalSetting' => __DIR__ . '/../..' . '/app/PaypalSetting.php',
+        'App\\PaypalSettings' => __DIR__ . '/../..' . '/app/PaypalSettings.php',
         'App\\Permission' => __DIR__ . '/../..' . '/app/Permission.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

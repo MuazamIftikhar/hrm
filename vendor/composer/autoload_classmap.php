@@ -36,6 +36,8 @@ return array(
     'App\\LeaveType' => $baseDir . '/app/LeaveType.php',
     'App\\Mail\\WelcomeMail' => $baseDir . '/app/Mail/WelcomeMail.php',
     'App\\Package' => $baseDir . '/app/Package.php',
+    'App\\PaypalSetting' => $baseDir . '/app/PaypalSetting.php',
+    'App\\PaypalSettings' => $baseDir . '/app/PaypalSettings.php',
     'App\\Permission' => $baseDir . '/app/Permission.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

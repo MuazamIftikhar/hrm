@@ -30,7 +30,9 @@ Route::group([ 'middleware' => ['auth']], function() {
 
     Route::POST('paymentwithpaypal', 'PaymentController@payWithpaypal')->name('paymentwithpaypal');
 
-    Route::get('status','PaymentController@status')->name('status');
+    Route::get('status','PaymentController@status')->name('status');//
+    Route::POST('save_setting','PaymentController@save_setting')->name('save_setting');//
+Route::GET('paypal/setting','PaymentController@paypal_setting')->name('paypal/setting');
 
 
 
