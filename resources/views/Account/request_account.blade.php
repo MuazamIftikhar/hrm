@@ -13,7 +13,6 @@
             <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
                 <thead>
                 <tr>
-                    <th>Record ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
@@ -24,7 +23,6 @@
                 <tbody>
                 @foreach($account as $a)
                 <tr>
-                    <td>{{$a->id}}</td>
                     <td>{{$a->name}}</td>
                     <td>{{$a->email}}</td>
                     <td>{{$a->phone}}</td>

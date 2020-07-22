@@ -53,24 +53,17 @@ var KTWizard4 = function () {
 			_formEl,
 			{
 				fields: {
-					fname: {
+                    name: {
 						validators: {
 							notEmpty: {
 								message: 'First name is required'
 							}
 						}
 					},
-					lname: {
+                    lastName: {
 						validators: {
 							notEmpty: {
 								message: 'Last Name is required'
-							}
-						}
-					},
-					phone: {
-						validators: {
-							notEmpty: {
-								message: 'Phone is required'
 							}
 						}
 					},
@@ -83,7 +76,174 @@ var KTWizard4 = function () {
 								message: 'The value is not a valid email address'
 							}
 						}
-					}
+					},
+                    DOJ: {
+						validators: {
+							notEmpty: {
+								message: 'Date of joining is required'
+							},
+						}
+					},
+					DOB: {
+						validators: {
+							notEmpty: {
+								message: 'Date of joining is required'
+							},
+						}
+					},
+					confirmationDate: {
+						validators: {
+							notEmpty: {
+								message: 'Confirmation Date is required'
+							},
+						}
+					}, Gender: {
+						validators: {
+							notEmpty: {
+								message: 'Gender is required'
+							},
+						}
+					}, employmentType: {
+						validators: {
+							notEmpty: {
+								message: 'Employment Type is required'
+							},
+						}
+					}, Department: {
+						validators: {
+							notEmpty: {
+								message: 'Department is required'
+							},
+						}
+					}, shift: {
+						validators: {
+							notEmpty: {
+								message: 'shift is required'
+							},
+						}
+					}, leave: {
+						validators: {
+							notEmpty: {
+								message: 'leave of joining is required'
+							},
+						}
+					}, Nationality: {
+						validators: {
+							notEmpty: {
+								message: 'Nationality is required'
+							},
+						}
+					}, Designation: {
+						validators: {
+							notEmpty: {
+								message: 'Designation is required'
+							},
+						}
+					}, Religion: {
+						validators: {
+							notEmpty: {
+								message: 'Religion is required'
+							},
+						}
+					}, Race: {
+						validators: {
+							notEmpty: {
+								message: 'Race is required'
+							},
+						}
+					}, supervisorName: {
+						validators: {
+							notEmpty: {
+								message: 'Supervisor Name is required'
+							},
+						}
+					}, bloodGroup: {
+						validators: {
+							notEmpty: {
+								message: 'Blood Group is required'
+							},
+						}
+					}, POB: {
+						validators: {
+							notEmpty: {
+								message: 'Place of Birth is required'
+							},
+						}
+					}, Identification: {
+						validators: {
+							notEmpty: {
+								message: 'Identification is required'
+							},
+						}
+					}, picture: {
+						validators: {
+							notEmpty: {
+								message: 'Picture is required'
+							},
+						}
+					}, Number: {
+						validators: {
+							notEmpty: {
+								message: 'Number is required'
+							},
+						}
+					}, Address: {
+						validators: {
+							notEmpty: {
+								message: 'Address is required'
+							},
+						}
+					}, Country: {
+						validators: {
+							notEmpty: {
+								message: 'Country is required'
+							},
+						}
+					},
+                    Postal: {
+						validators: {
+							notEmpty: {
+								message: 'Postal is required'
+							},
+						}
+					}, Skill: {
+						validators: {
+							notEmpty: {
+								message: 'Skill is required'
+							},
+						}
+					}, Frequency: {
+						validators: {
+							notEmpty: {
+								message: 'Frequency is required'
+							},
+						}
+					}, basicPay: {
+						validators: {
+							notEmpty: {
+								message: 'Basic Pay is required'
+							},
+						}
+					}, contactName: {
+						validators: {
+							notEmpty: {
+								message: 'Contact Name is required'
+							},
+						}
+					}, Relationship: {
+						validators: {
+							notEmpty: {
+								message: 'Relationship is required'
+							},
+						}
+					},
+                    contactNumber: {
+						validators: {
+							notEmpty: {
+								message: 'Contact Number is required'
+							},
+						}
+					},
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
@@ -97,41 +257,68 @@ var KTWizard4 = function () {
 			_formEl,
 			{
 				fields: {
-					address1: {
+                    fatherName: {
 						validators: {
 							notEmpty: {
-								message: 'Address is required'
+								message: 'Father Name is required'
+							}
+						}
+					},fatherID: {
+						validators: {
+							notEmpty: {
+								message: 'Father ID is required'
 							}
 						}
 					},
-					postcode: {
+					motherName: {
 						validators: {
 							notEmpty: {
-								message: 'Postcode is required'
+								message: 'Mother Name is required'
+							}
+						}
+					},motherID: {
+						validators: {
+							notEmpty: {
+								message: 'Mother ID is required'
+							}
+						}
+					},spouseName: {
+						validators: {
+							notEmpty: {
+								message: 'spouse Name is required'
+							}
+						}
+					},spouseID: {
+						validators: {
+							notEmpty: {
+								message: 'spouseID is required'
+							}
+						}
+					},childName: {
+						validators: {
+							notEmpty: {
+								message: ' child Name is required'
+							}
+						}
+					}, childID: {
+						validators: {
+							notEmpty: {
+								message: 'child ID is required'
+							}
+						}
+					},childTwoName: {
+						validators: {
+							notEmpty: {
+								message: 'child Two Name is required'
+							}
+						}
+					},childTwoID: {
+						validators: {
+							notEmpty: {
+								message: 'child Two ID is required'
 							}
 						}
 					},
-					city: {
-						validators: {
-							notEmpty: {
-								message: 'City is required'
-							}
-						}
-					},
-					state: {
-						validators: {
-							notEmpty: {
-								message: 'State is required'
-							}
-						}
-					},
-					country: {
-						validators: {
-							notEmpty: {
-								message: 'Country is required'
-							}
-						}
-					}
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
@@ -145,47 +332,56 @@ var KTWizard4 = function () {
 			_formEl,
 			{
 				fields: {
-					ccname: {
+                    payMode: {
 						validators: {
 							notEmpty: {
-								message: 'Credit card name is required'
+								message: 'Pay Mode is required'
+							}
+						}
+					},Bank: {
+						validators: {
+							notEmpty: {
+								message: 'Bank is required'
 							}
 						}
 					},
-					ccnumber: {
+                    Code: {
 						validators: {
 							notEmpty: {
-								message: 'Credit card number is required'
-							},
-							creditCard: {
-								message: 'The credit card number is not valid'
+								message: 'Code is required'
+							}
+						}
+					}, accountNumber: {
+						validators: {
+							notEmpty: {
+								message: 'Account Number is required'
 							}
 						}
 					},
-					ccmonth: {
+                    branchCode: {
 						validators: {
 							notEmpty: {
-								message: 'Credit card month is required'
+								message: 'Branch Code is required'
 							}
 						}
 					},
-					ccyear: {
+				},
+				plugins: {
+					trigger: new FormValidation.plugins.Trigger(),
+					bootstrap: new FormValidation.plugins.Bootstrap()
+				}
+			}
+		));_validations.push(FormValidation.formValidation(
+			_formEl,
+			{
+				fields: {
+                    Remarks: {
 						validators: {
 							notEmpty: {
-								message: 'Credit card year is required'
+								message: 'Remarks is required'
 							}
 						}
 					},
-					cccvv: {
-						validators: {
-							notEmpty: {
-								message: 'Credit card CVV is required'
-							},
-							digits: {
-								message: 'The CVV value is not valid. Only numbers is allowed'
-							}
-						}
-					}
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),

@@ -22,7 +22,6 @@ class CreateAdminInfosTable extends Migration
             $table->string('cardName');
             $table->string('cardNumber');
             $table->string('cvv');
-            $table->string('status');
             $table->string('expiryDate');
             $table->timestamps();
         });
