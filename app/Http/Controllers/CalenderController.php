@@ -57,6 +57,7 @@ class CalenderController extends Controller
         $employee=Employee::whereNotIn('user_id', $applly_leave)
             ->where('company_id',Auth::user()->id)->where('shift',$request->shift)->take($request->employee_number)->pluck('name');
         $day=Carbon::parse($request->date)->format('l');
+
         $assign_employee=AssignEmployee::where('company_id',Auth::user()->id)->where('shift',$shift[0])->get();
         if (count($assign_employee) > 0){
             return redirect()->back()->with("error" , "You already assign the employee on that day your Leave!");
@@ -64,6 +65,7 @@ class CalenderController extends Controller
             $scheduling = new Scheduling();
             $scheduling->day = $day;
             $scheduling->date = $request->date;
+            $scheduling->shift_id = $shift[0];
             $scheduling->number = $request->employee_number;
             $scheduling->description = $request->description;
             $scheduling->save();
